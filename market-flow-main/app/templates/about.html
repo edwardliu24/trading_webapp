@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock %}
+
+{% block nav %}
+<ul>
+  <li><a href="{{ url_for('main') }}">Overview</a></li>
+  <li><a href="{{ url_for('test') }}">Test Our Product</a></li>
+  <li><a href="{{ url_for('about') }}" class="active">About the Creators</a></li>
+</ul>
+{% endblock %}
+
+{% block header %}<h2>About the Creators</h2>{% endblock %}
+
+<!-- CONTENT BEGINS HERE -->
+
+{% block content %}
+Created by UCLA Students Jonathn Chang, Ananda Gowda, and Shannan Liu as their final project for PIC16B.
+<br><br>
+
+  <div class="row">
+    <a href="https://github.com/jonchang153" target="_blank">
+      <div class="column">
+        <div class="card">
+          <img src="{{ url_for('static', filename='jonathn.png') }}" alt="Jonathn" style="width:100%">
+          <div class="container">
+            <h2>Jonathn Chang</h2>
+            <p class="title">The Next Terence Tao</p>
+            <p>Second-year Applied Math major with Specialization in Computing. Featured concert pianist at Carnegie Hall.</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://github.com/acgowda" target="_blank">
+      <div class="column">
+        <div class="card">
+          <img src="{{ url_for('static', filename='ananda.png') }}" alt="Ananda" style="width:100%">
+          <div class="container">
+            <h2>Ananda Gowda</h2>
+            <p class="title">Computer Wizard & NCAA Men's Tennis champion</p>
+            <p>Third-year Data Theory major. Grand Slam boys' singles champion.</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://github.com/shannan-liu1" target="_blank">
+      <div class="column">
+        <div class="card">
+          <img src="{{ url_for('static', filename='shannan.png') }}" alt="Shannan" style="width:100%">
+          <div class="container">
+            <h2>Shannan Liu</h2>
+            <p class="title">PIC 16B Student</p>
+            <p>Fourth-year Business-Economics major. Going to MIT.</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Test{% endblock %}
+
+{% block nav %}
+<ul>
+  <li><a href="{{ url_for('main') }}">Overview</a></li>
+  <li><a href="{{ url_for('test') }}" class="active">Test Our Product</a></li>
+  <li><a href="{{ url_for('about') }}">About the Creators</a></li>
+</ul>
+{% endblock %}
+
+{% block header %}<h2>Test Our Product</h2>{% endblock %}
+
+<!-- CONTENT BEGINS HERE -->
+
+{% block content %}
+  <p>Please specify a number of days to predict.</p>
+  <form method="post">
+      <input type="text" name="target" id="textbox">
+      <input type="submit" value="Submit">
+  </form>
+
+  {% if error %}
+    <p>Submission was invalid. Please try again.<p>
+  {% endif %}
+
+  {% if target %}
+    <p>The model predicts that {{target}} will go {{pred}} over the next week. Over the past two years, the accuracy of this 
+      model's weekly predictions on {{target}} is {{accuracy}}%. Below is an interactive plot of the stock over the last six months, and a plot describing the returns of using our model to make trades.</p>
+
+    <p>{{accuracy}}</p>
+    <p>{{pred}}</p>
+
+
+    <!-- boilerplate code for plotting graphJSON as plotly -->
+    <!-- <div id='chart' class='chart'></div>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script type='text/javascript'>
+      var graphs = {{tickerJSON | safe}};
+      Plotly.plot('chart',graphs,{});
+    </script>
+     -->
+
+    <div id='chart2' class='chart2'></div>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script type='text/javascript'>
+      var graphs = {{returnsJSON | safe}};
+      Plotly.plot('chart2',graphs,{});
+    </script>
+  {% endif %}
+{% endblock %}

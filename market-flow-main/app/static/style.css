@@ -1,0 +1,126 @@
+/*
+background: white
+highlight: #A5BCD0
+darker highlight: #547DA0
+hover: #A2D6F9;
+text: black
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+html {
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 33px;
+}
+
+h2 {
+    margin: 1rem 0;
+    font-size: 23px;
+}
+
+nav {
+    background-color: #A5BCD0;
+    overflow: auto;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    float: left;
+    padding: 12px 0px;
+    width: 33.333%;
+    text-align: center;
+    font-size: 17px;
+}
+
+
+nav ul li a:hover {
+    background-color: #547DA0;
+    color: #A2D6F9;
+}
+
+.active {
+    background-color: #547DA0;
+    color: #A2D6F9;
+}
+
+@media screen and (max-width: 500px) {
+  nav ul li a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.content {
+    padding: 0 1rem 1rem;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid lightgray;
+}
+
+
+
+
+
+
+
+.column {
+  float: left;
+  width: 31%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+    color: gray;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+div a {
+    color: black;
+}
+
+img:hover {
+    filter: alpha(opacity=80);
+    opacity: .8;
+}
